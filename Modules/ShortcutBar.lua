@@ -334,3 +334,19 @@ RegisterShortcut("ignore", L["Ignore User"], {
 	    _G.StaticPopup_Show("WIM_IGNORE");
         end
     });
+RegisterShortcut("exclude", L["Exclude from guild"], {
+    OnClick = function(self)
+        _G.StaticPopupDialogs["WIM_EXCLUDE"] = {
+            text = _G.format(L["Are you sure you want to\nexclude %s?"], "|cff69ccf0"..(self.parentWindow.theUser).."|r"),
+            button1 = L["Yes"],
+            button2 = L["No"],
+            OnAccept = function()
+                _G.GuildUninvite(self.parentWindow.theUser);
+            end,
+            timeout = 0,
+            whileDead = 1,
+            hideOnEscape = 1
+        };
+        _G.StaticPopup_Show("WIM_EXCLUDE");
+    end
+});
