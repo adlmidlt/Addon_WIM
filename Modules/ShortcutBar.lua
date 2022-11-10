@@ -307,9 +307,9 @@ RegisterShortcut("location", L["Player Location"], {
 RegisterShortcut("guild1", L["Invite to Guild v1"], {
         OnClick = function(self)
             local randomWhisper = {
-            "Приглашаем тебя",
-            "Приглашаем в гости",
-            "Приглашаем тебя посмотреть на нашу гильдию",
+            L["We invite you"],
+            L["We invite you to visit"],
+            L["We invite you to visit our guild"],
             }
             _G.SendChatMessage(randomWhisper[math.random(#randomWhisper)],"WHISPER","Common",self.parentWindow.theUser)
             _G.GuildInvite(self.parentWindow.theUser);
@@ -317,7 +317,7 @@ RegisterShortcut("guild1", L["Invite to Guild v1"], {
     });
 RegisterShortcut("guild2", L["Invite to Guild v2"], {
         OnClick = function(self)
-        local message = _G.format("%s приглашаем тебя", self.parentWindow.theUser)
+        local message = _G.format(L["%s We invite you"], self.parentWindow.theUser)
             _G.SendChatMessage(message,"WHISPER","Common",self.parentWindow.theUser)
             _G.GuildInvite(self.parentWindow.theUser);
         end

@@ -221,6 +221,10 @@ WIM.AddLocale("ruRU", {
 	["Are you sure you want to\nexclude %s?"] = "Вы уверены что вы хотите исключить\nперсонажа %s из ГИ?",
     ["Right-Click for profile links..."] = "[Правый-Клик] - ссылка на профиль...",
     ["Profile Links"] = "Ссылка на профиль",
+    ["We invite you"] = "Приглашаем тебя",
+    ["We invite you to visit"] = "Приглашаем тебя в гости",
+    ["We invite you to visit our guild"] = "Приглашаем тебя посмотреть на нашу гильдию",
+    ["%s We invite you"] = "Приглашаем тебя",
     
     -- Tutorials.lua --
 	["Display WIM tips"] = "Отображать подсказки WIMа",
