@@ -224,13 +224,13 @@ local WIM_ClassicSkin = {
                     HighlightTexture = "Interface\\Buttons\\ButtonHilight-Square",
                     HighlightAlphaMode = "ADD",
                     icons = {
+                        location = "Interface\\Icons\\Ability_TownWatch",
                         guild1 = "Interface\\Icons\\Ability_Paladin_Blessedhands",
                         guild2 = "Interface\\Icons\\Ability_Paladin_Blessedmending",
-                        location = "Interface\\Icons\\Ability_TownWatch",
                         invite = "Interface\\Icons\\Spell_Holy_BlessingOfStrength",
                         friend = "Interface\\Icons\\INV_Misc_GroupNeedMore",
                         ignore = "Interface\\Icons\\Ability_Physical_Taunt",
-                        exclude = "Interface\\Icons\\Ability_Gouge",
+                        exclude = "Interface\\Icons\\Ability_Warrior_Offensivestance",
 
                     }
                 }
