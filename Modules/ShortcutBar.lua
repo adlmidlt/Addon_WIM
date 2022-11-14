@@ -305,22 +305,37 @@ RegisterShortcut("location", L["Player Location"], {
         end
     });
 RegisterShortcut("guild1", L["Invite to Guild v1"], {
-        OnClick = function(self)
-            local randomWhisper = {
-            L["We invite you"],
-            L["We invite you to visit"],
-            L["We invite you to visit our guild"],
-            }
-            _G.SendChatMessage(randomWhisper[math.random(#randomWhisper)],"WHISPER","Common",self.parentWindow.theUser)
-            _G.GuildInvite(self.parentWindow.theUser);
-        end
+    OnClick = function(self)
+        local randomWhisper = {
+            "Приглашаем тебя",
+            "Приглашаем в гости",
+            "Приглашаем тебя посмотреть на нашу гильдию",
+        }
+        local win = self.parentWindow;
+        --_G.SendChatMessage(randomWhisper[_G.math.random(1, #randomWhisper)], "WHISPER", Common, self.parentWindow.theUser);
+        _G.GuildInvite(win.isBN and win.toonName or self.parentWindow.theUser);
+    end
     });
 RegisterShortcut("guild2", L["Invite to Guild v2"], {
-        OnClick = function(self)
-        local message = _G.format(L["%s We invite you"], self.parentWindow.theUser)
-            _G.SendChatMessage(message,"WHISPER","Common",self.parentWindow.theUser)
-            _G.GuildInvite(self.parentWindow.theUser);
+    OnClick = function()
+        local randomWhisper = {
+            "Приглашаем тебя",
+            "Приглашаем в гости",
+            "Приглашаем тебя посмотреть на нашу гильдию",
+        }
+        local countWhoList = _G.GetNumWhoResults();
+        for i = 1, countWhoList() do
+            local name, guild = _G.GetWhoInfo(i)
+            if guild == "" then
+                --local message = _G.format("%s %s", name, randomWhisper[_G.math.random(1, #randomWhisper)]);
+                --_G.SendChatMessage(message, "WHISPER", Common, name);
+                _G.GuildInvite(name);
+            end
+            if i == 5 then
+                break
+            end
         end
+    end
     });
 RegisterShortcut("invite", L["Invite to Party"], {
         OnClick = function(self)
